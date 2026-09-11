@@ -6,91 +6,81 @@
 <title>Jonathan Familia Delgado — #22</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@700&family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;600&display=swap" rel="stylesheet"/>
 <style>
-:root{--lime:#D2FF00;--ink:#111112;--olive:#282C20;--cream:#F4F1E8;--paper:#EBEEE0}
+:root{--lime:#E8FF2A;--pink:#FF3D8A;--navy:#17122B;--ink:#110E18;--cream:#F7F2EC;--paper:#EEE8E0}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--cream);color:var(--ink);font-family:Outfit,system-ui,sans-serif}
 html{scroll-behavior:smooth}body{overflow-x:hidden}
 img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
 #loader{position:fixed;inset:0;z-index:200;background:var(--lime);display:grid;place-items:center;transition:.6s}
 #loader.hide{opacity:0;visibility:hidden}
-.mono{font-family:Anton,sans-serif;font-size:72px;transform:skewX(-8deg)}
-.load-caption{position:absolute;bottom:40px;font-size:11px;letter-spacing:.28em;font-weight:600}
-.bar{position:fixed;inset:0 0 auto 0;z-index:80;display:flex;justify-content:space-between;padding:22px 28px;pointer-events:none}
+.mono{font-family:Anton,sans-serif;font-size:84px;transform:skewX(-8deg)}
+.load-caption{position:absolute;bottom:40px;font-size:11px;letter-spacing:.32em;font-weight:600}
+.bar{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;justify-content:space-between;padding:22px 28px;pointer-events:none}
 .bar>*{pointer-events:auto}
-.wordmark{font-family:Anton,sans-serif;font-size:28px;line-height:.82;text-transform:uppercase}
+.wordmark{font-family:Anton,sans-serif;font-size:26px;line-height:.82;text-transform:uppercase}
 .bar-right{display:flex;gap:10px}
 .store{background:var(--lime);border:0;border-radius:8px;padding:10px 16px;font-size:13px;font-weight:600;letter-spacing:.08em}
 .burger{width:44px;height:40px;border-radius:8px;border:1.5px solid #1113;background:#fff}
-.panel{position:fixed;inset:0;background:var(--ink);color:var(--cream);z-index:90;display:none;padding:100px 40px}
+.panel{position:fixed;inset:0;background:var(--navy);color:var(--cream);z-index:90;display:none;padding:100px 40px}
 .panel.open{display:block}
-.panel a{display:block;font-family:Anton,sans-serif;font-size:clamp(40px,8vw,90px);line-height:.9}
+.panel a{display:block;font-family:Anton,sans-serif;font-size:clamp(40px,8vw,88px);line-height:.9}
 .panel a:hover{color:var(--lime)}
 .panel .close{position:absolute;top:22px;right:28px;width:44px;height:40px;border:0;border-radius:8px;background:var(--lime)}
-.hero{min-height:100svh;position:relative;display:grid;place-items:end center;overflow:hidden;background:var(--cream)}
-.blobs{position:absolute;inset:0;opacity:.5;background:radial-gradient(closest-side at 18% 30%,#e7e2d4 0 40%,transparent 41%),radial-gradient(closest-side at 82% 18%,#e4e0d2 0 34%,transparent 35%)}
-.hero-stage{position:relative;width:min(720px,100%);margin:0 auto;padding-top:70px}
-.hero-face{width:100%;height:92svh;object-fit:cover;object-position:center top}
-.hero-helm{position:absolute;left:50%;top:6%;width:min(340px,58%);transform:translateX(-50%) rotate(-6deg);filter:drop-shadow(0 18px 30px #0005)}
-.badge{position:absolute;left:28px;bottom:28px;width:118px;border:1px solid #1114;border-radius:10px 22px 10px 10px;padding:12px 10px;background:#fff8;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
-.badge b{display:block;margin-top:8px;font-size:12px}
-.message{background:var(--olive);color:var(--paper);padding:90px 6vw 120px}
+.hero{min-height:100svh;position:relative;background:var(--cream);display:grid;place-items:end center;overflow:hidden}
+.blobs{position:absolute;inset:0;opacity:.7;background:radial-gradient(closest-side at 12% 24%,#ffd0e4 0 28%,transparent 29%),radial-gradient(closest-side at 88% 18%,#f3ff9a 0 24%,transparent 25%)}
+.hero-stage{position:relative;width:min(760px,100%);margin:0 auto}
+.hero-face{width:100%;height:100svh;object-fit:cover;object-position:center 18%}
+.badge{position:absolute;left:28px;bottom:28px;width:124px;border:1px solid #1114;border-radius:10px 22px 10px 10px;padding:12px 10px;background:#fff9;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+.badge b{display:block;margin-top:8px;font-size:13px}
+.message{background:var(--navy);color:var(--paper);padding:90px 6vw 120px}
 .msg-label{letter-spacing:.42em;font-size:11px;text-transform:uppercase;color:var(--lime);margin-bottom:40px}
-.collage{position:relative;min-height:820px}
+.collage{position:relative;min-height:860px}
 .polaroid{position:absolute}.polaroid img{width:100%;height:100%;object-fit:cover}
-.polaroid span{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#c8cbbd;margin-bottom:8px}
-.p1{left:4%;top:0;width:220px;height:280px}
-.p2{left:12%;top:360px;width:210px;height:260px;filter:grayscale(1)}
-.p3{right:6%;top:0;width:160px;height:210px;filter:grayscale(1)}
-.p4{right:18%;top:280px;width:380px;height:420px}
-.quote{position:absolute;left:38%;top:40px;width:min(340px,40%);font-family:Instrument Serif,serif;font-size:clamp(26px,3vw,38px);line-height:1.15}
-.quote em{font-style:italic}
-.sign{font-family:Caveat,cursive;color:var(--lime);font-size:34px;margin-top:14px}
-.tracks{background:var(--cream);padding:80px 4vw;display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center}
-.side-cut{height:min(620px,80vh);object-fit:cover;width:100%}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;text-align:center}
+.polaroid span{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#c8c4d6;margin-bottom:8px}
+.p1{left:3%;top:0;width:240px;height:300px}.p2{left:10%;top:380px;width:220px;height:250px}.p3{right:5%;top:10px;width:170px;height:200px}.p4{right:14%;top:300px;width:420px;height:460px}
+.quote{position:absolute;left:36%;top:36px;width:min(360px,42%);font-family:Instrument Serif,serif;font-size:clamp(26px,3vw,38px);line-height:1.15}
+.quote em{font-style:italic;color:var(--pink)}
+.sign{font-family:Caveat,cursive;color:var(--lime);font-size:36px;margin-top:14px}
+.tracks{background:var(--cream);padding:80px 3vw 90px;display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center}
+.side-cut{height:min(640px,82vh);object-fit:cover;width:100%}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;text-align:center;min-width:280px}
 .big{font-family:Anton,sans-serif;font-size:clamp(52px,8vw,92px);line-height:.8;position:relative}
-.scribble{position:absolute;left:50%;top:-18%;transform:translateX(-50%) rotate(-12deg);font-family:Caveat,cursive;color:var(--lime);font-size:clamp(64px,10vw,110px)}
+.scribble{position:absolute;left:50%;top:-20%;transform:translateX(-50%) rotate(-12deg);font-family:Caveat,cursive;color:var(--pink);font-size:clamp(64px,10vw,110px);line-height:1}
 .tracks p{margin:14px 0 18px;color:#444}
 .go{width:48px;height:48px;border:0;border-radius:8px;background:var(--lime);display:inline-grid;place-items:center}
-.store-sec{background:var(--cream);padding:40px 4vw 100px;display:grid;grid-template-columns:1fr 1.1fr;gap:30px;align-items:center}
+.store-sec{background:var(--cream);padding:20px 4vw 100px;display:grid;grid-template-columns:.9fr 1.2fr;gap:28px;align-items:center}
 .store-sec h2{font-family:Anton,sans-serif;font-size:clamp(48px,7vw,84px);line-height:.88;margin:10px 0 16px}
 .pill{display:inline-flex;background:var(--lime);border-radius:8px;padding:12px 18px;font-size:13px;font-weight:600;margin-top:18px}
-.mosaic{position:relative;min-height:560px}
-.mosaic img{position:absolute;object-fit:cover}
-.m1{right:8%;top:0;width:58%;height:78%}
-.m2{right:0;top:8%;width:28%;height:28%}
-.m3{left:0;bottom:8%;width:32%;height:36%}
-.m4{left:28%;bottom:0;width:30%;height:34%}
-.lids{background:#111;color:#eee;padding:80px 4vw}
+.mosaic{position:relative;min-height:620px}.mosaic img{position:absolute;object-fit:cover}
+.m1{right:2%;top:0;width:72%;height:78%}.m2{right:0;top:6%;width:26%;height:30%}.m3{left:0;bottom:6%;width:34%;height:38%}.m4{left:30%;bottom:0;width:28%;height:32%}
+.lids{background:var(--ink);color:#eee;padding:80px 4vw 100px}
 .lid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.lid{border:1px solid #2a2a2a;border-radius:18px 18px 28px 8px;min-height:280px;padding:18px;position:relative;background:#161616}
-.lid img{width:78%;margin:12px auto}.lid b{position:absolute;right:16px;bottom:16px;font-size:13px}
-.lid i{color:var(--lime);font-style:normal}
-.social{background:var(--olive);color:var(--paper);padding:80px 6vw}
-.social h2{font-family:Anton,sans-serif;font-size:clamp(42px,7vw,80px);line-height:.9}
-.social a{color:var(--lime)}
-footer{background:#111;color:#777;padding:22px 28px;font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.lid{border:1px solid #2a2438;border-radius:18px 18px 28px 8px;min-height:300px;padding:16px;position:relative;background:#16121f;overflow:hidden}
+.lid img{width:100%;height:240px;object-fit:cover}
+.lid b{position:absolute;right:16px;bottom:14px;font-size:13px}.lid i{color:var(--lime);font-style:normal;margin-left:6px}
+.partners{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px}
+.partner{border:1px solid #ffffff22;min-height:72px;display:grid;place-items:center;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:#bbb}
+.social{background:var(--navy);color:var(--paper);padding:80px 6vw}
+.social h2{font-family:Anton,sans-serif;font-size:clamp(42px,7vw,80px);line-height:.9}.social a{color:var(--lime)}
+footer{background:#0b0a10;color:#777;padding:22px 28px;font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media(max-width:900px){
-.bar{padding:14px}.wordmark{font-size:20px}.hero-face{height:86svh}
-.collage{min-height:0;display:grid;gap:24px}
-.polaroid,.quote{position:static;width:auto;height:auto}
-.polaroid img{height:240px;width:100%;object-fit:cover}
-.tracks{grid-template-columns:1fr;padding:50px 18px}.side-cut{height:220px}
-.store-sec{grid-template-columns:1fr}.mosaic{min-height:380px}
-.lid-grid{grid-template-columns:1fr 1fr}
+.bar{padding:14px}.wordmark{font-size:20px}.hero-face{height:100svh}
+.collage{min-height:0;display:grid;gap:24px}.polaroid,.quote{position:static;width:auto;height:auto}
+.polaroid img{height:280px;width:100%;object-fit:cover}.p4 img{height:360px}
+.tracks{grid-template-columns:1fr;padding:48px 16px}.side-cut{height:260px}
+.store-sec{grid-template-columns:1fr}.mosaic{min-height:460px}.lid-grid{grid-template-columns:1fr}.partners{grid-template-columns:1fr 1fr}
 }
-</style>
-</head>
+</style></head>
 <body>
 <div id="loader"><div class="mono">22</div><div class="load-caption">LOAD JONATHAN</div></div>
 <header class="bar"><a class="wordmark" href="#top">Jonathan<br>Familia</a><div class="bar-right"><a class="store" href="https://www.instagram.com/jonathanrd22/" target="_blank" rel="noopener">STORE</a><button class="burger" id="open">☰</button></div></header>
-<nav class="panel" id="panel"><button class="close" id="close">✕</button><a href="#top">Home</a><a href="#message">Message</a><a href="#tracks">On / Off track</a><a href="#store">Store</a><a href="#helmets">Helmets</a><a href="#social">Socials</a></nav>
-<section class="hero" id="top"><div class="blobs"></div><div class="hero-stage"><img class="hero-face" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80" alt="Jonathan"/><img class="hero-helm" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt="helmet"/></div><div class="badge">Next race<b>Round · #22</b>Motocross</div></section>
-<section class="message" id="message"><p class="msg-label">M e s s a g e &nbsp; f r o m &nbsp; j o n a t h a n</p><div class="collage"><figure class="polaroid p1"><span>Pista, 2026</span><img src="https://images.unsplash.com/photo-1622185135505-2d7955644452?auto=format&fit=crop&w=1200&q=80" alt=""/></figure><figure class="polaroid p2"><span>Paddock, 2025</span><img src="https://images.unsplash.com/photo-1558981806-ec527fa84b39?auto=format&fit=crop&w=900&q=80" alt=""/></figure><div class="quote">No importa <em>dónde</em> empiezas, importa <em>cómo</em> avanzas desde ahí.<div class="sign">Jonathan</div></div><figure class="polaroid p3"><span>Off track</span><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=80" alt=""/></figure><figure class="polaroid p4"><span>Roost, 2026</span><img src="https://images.unsplash.com/photo-1518652160713-0e0597d36612?auto=format&fit=crop&w=1200&q=80" alt=""/></figure></div></section>
-<section class="tracks" id="tracks"><img class="side-cut" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt=""/><div><div class="pair"><div><div class="big"><span class="scribble">On</span>TRACK</div><p>Resultados, stats y fotos desde la pista.</p><a class="go" href="#helmets">↗</a></div><div><div class="big">OFF<br>TRACK</div><p>Campañas, shoots y material para fans.</p><a class="go" href="#store">↗</a></div></div></div><img class="side-cut" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80" alt=""/></section>
-<section class="store-sec" id="store"><div><p style="letter-spacing:.2em;font-size:12px;text-transform:uppercase">JFD Store</p><h2>NEW IN:<br>22 RACING</h2><p style="max-width:420px;color:#444">Colección mockup de rendimiento y velocidad. Estética de paddock con el 22 adelante.</p><a class="pill" href="https://www.instagram.com/jonathanrd22/" target="_blank" rel="noopener">VISIT THE STORE ↗</a></div><div class="mosaic"><img class="m1" src="https://images.unsplash.com/photo-1558981806-ec527fa84b39?auto=format&fit=crop&w=900&q=80" alt=""/><img class="m2" src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80" alt=""/><img class="m3" src="https://images.unsplash.com/photo-1449426468159-d96dbf6334bf?auto=format&fit=crop&w=800&q=80" alt=""/><img class="m4" src="https://images.unsplash.com/photo-1591637333824-8a67f05766fb?auto=format&fit=crop&w=800&q=80" alt=""/></div></section>
-<section class="lids" id="helmets"><p style="letter-spacing:.28em;font-size:12px;text-transform:uppercase;color:#D2FF00;margin-bottom:28px">Helmets</p><div class="lid-grid"><article class="lid"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt=""/><b>Season <i>2026</i></b></article><article class="lid"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=600&q=80" alt=""/><b>Factory <i>22</i></b></article><article class="lid"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt=""/><b>Splash <i>2026</i></b></article><article class="lid"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=600&q=80" alt=""/><b>Night <i>2025</i></b></article><article class="lid"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt=""/><b>Test <i>2025</i></b></article><article class="lid"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=600&q=80" alt=""/><b>Classic <i>22</i></b></article></div></section>
-<section class="social" id="social"><p style="letter-spacing:.28em;font-size:12px;text-transform:uppercase;color:#D2FF00;margin-bottom:16px">What’s up on socials</p><h2>FOLLOW<br>JONATHAN.</h2><p style="margin-top:18px"><a href="https://www.instagram.com/jonathanrd22/" target="_blank" rel="noopener">@jonathanrd22 ↗</a></p></section>
-<footer><span>Jonathan Familia Delgado · #22 · tribute</span><span>Layout clonado de landonorris.com</span></footer>
-<script>window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('hide'),700));const p=document.getElementById('panel');document.getElementById('open').onclick=()=>p.classList.add('open');document.getElementById('close').onclick=()=>p.classList.remove('open');p.querySelectorAll('a').forEach(a=>a.onclick=()=>p.classList.remove('open'));</script>
+<nav class="panel" id="panel"><button class="close" id="close">✕</button><a href="#top">Home</a><a href="#message">Message</a><a href="#tracks">On / Off track</a><a href="#store">Bike</a><a href="#helmets">Helmets</a><a href="#social">Socials</a></nav>
+<section class="hero" id="top"><div class="blobs"></div><div class="hero-stage"><img class="hero-face" src="https://n.uguu.se/HoaRbKio.jpg" alt="Jonathan Familia Delgado #22"/></div><div class="badge">Next race<b>#22 · MiniGP</b>On track</div></section>
+<section class="message" id="message"><p class="msg-label">M e s s a g e &nbsp; f r o m &nbsp; j o n a t h a n</p><div class="collage"><figure class="polaroid p1"><span>Casco Alpinestars</span><img src="https://h.uguu.se/drHyPBjr.jpg" alt=""/></figure><figure class="polaroid p2"><span>Perfil del 22</span><img src="https://d.uguu.se/DCDwvznt.jpg" alt=""/></figure><div class="quote">No importa <em>dónde</em> empiezas, importa <em>cómo</em> avanzas desde ahí.<div class="sign">Jonathan</div></div><figure class="polaroid p3"><span>MT Helmets</span><img src="https://n.uguu.se/HoaRbKio.jpg" alt=""/></figure><figure class="polaroid p4"><span>Pista · #22</span><img src="https://n.uguu.se/kfMLXcHf.jpg" alt=""/></figure></div></section>
+<section class="tracks" id="tracks"><img class="side-cut" src="https://d.uguu.se/DCDwvznt.jpg" alt=""/><div><div class="pair"><div><div class="big"><span class="scribble">On</span>TRACK</div><p>La moto rosa #22, el mono Cases y el crono.</p><a class="go" href="#store">↗</a></div><div><div class="big">OFF<br>TRACK</div><p>Casco, paddock y la cara detrás de la visera.</p><a class="go" href="#helmets">↗</a></div></div></div><img class="side-cut" src="https://n.uguu.se/HoaRbKio.jpg" alt=""/></section>
+<section class="store-sec" id="store"><div><p style="letter-spacing:.2em;font-size:12px;text-transform:uppercase">The bike</p><h2>NEW IN:<br>22 RACING</h2><p style="max-width:420px;color:#444">Rosa, lima y azul. El 22 en el frontal, MIR Racing en el carenado, Cases en el cuero.</p><a class="pill" href="https://www.instagram.com/jonathanrd22/" target="_blank" rel="noopener">INSTAGRAM ↗</a></div><div class="mosaic"><img class="m1" src="https://n.uguu.se/kfMLXcHf.jpg" alt=""/><img class="m2" src="https://h.uguu.se/drHyPBjr.jpg" alt=""/><img class="m3" src="https://d.uguu.se/DCDwvznt.jpg" alt=""/><img class="m4" src="https://n.uguu.se/HoaRbKio.jpg" alt=""/></div></section>
+<section class="lids" id="helmets"><p style="letter-spacing:.28em;font-size:12px;text-transform:uppercase;color:#E8FF2A;margin-bottom:28px">Helmets</p><div class="lid-grid"><article class="lid"><img src="https://h.uguu.se/drHyPBjr.jpg" alt=""/><b>Alpinestars <i>22</i></b></article><article class="lid"><img src="https://d.uguu.se/DCDwvznt.jpg" alt=""/><b>Side <i>livery</i></b></article><article class="lid"><img src="https://n.uguu.se/HoaRbKio.jpg" alt=""/><b>MT <i>on</i></b></article></div><div class="partners"><div class="partner">MIR Racing</div><div class="partner">Cases</div><div class="partner">Alpinestars</div><div class="partner">MT Helmets</div><div class="partner">Giuseppe</div><div class="partner">Rainers</div><div class="partner">fi network</div><div class="partner">#22</div></div></section>
+<section class="social" id="social"><p style="letter-spacing:.28em;font-size:12px;text-transform:uppercase;color:#E8FF2A;margin-bottom:16px">What’s up on socials</p><h2>FOLLOW<br>JONATHAN.</h2><p style="margin-top:18px"><a href="https://www.instagram.com/jonathanrd22/" target="_blank" rel="noopener">@jonathanrd22 ↗</a></p></section>
+<footer><span>Jonathan Familia Delgado · #22</span><span>Layout inspirado en landonorris.com</span></footer>
+<script>window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('hide'),650));const panel=document.getElementById('panel');document.getElementById('open').onclick=()=>panel.classList.add('open');document.getElementById('close').onclick=()=>panel.classList.remove('open');panel.querySelectorAll('a').forEach(a=>a.onclick=()=>panel.classList.remove('open'));</script>
 </body></html>
